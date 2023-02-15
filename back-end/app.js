@@ -78,5 +78,13 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
+app.get('/about-us', async (req, res) => {
+  return res.json({
+    description:
+      'Hi, my name is 163dgm, below is an image of my GitHub profile picture (https://github.com/163dgm). I am currently a student at NYU and my major is in Computer Science. I am really excited to be taking this class! I have been using Javascript for a while now, and I think it is my favorite programming language so far. Mainly because of the ecosystem and the way it is the center of web development and will be for a while. I have had some experience in JS before, but I have never actually made a full-stack application yet, only SPAs that use some APIs, so I am eager to learn more in Agile Development and DevOps. Thanks for reading!',
+    imageUrl: 'https://avatars.githubusercontent.com/u/123358515?v=4',
+  })
+})
+
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
