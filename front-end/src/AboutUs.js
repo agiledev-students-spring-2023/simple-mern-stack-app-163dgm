@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import loadingIcon from './loading.gif'
+import './AboutUs.css'
 
 const AboutUs = () => {
   const [description, setDescription] = useState('')
@@ -30,11 +31,11 @@ const AboutUs = () => {
 
   return (
     <>
-      <article>
+      <article className="about-us-article">
         <h1>About Us</h1>
-        {error && <p className="Messages-error">{error}</p>}
+        {error && <p className="error">{error}</p>}
         {!loaded && <img src={loadingIcon} alt="loading" />}
-        <p>{description}</p>
+        <p dangerouslySetInnerHTML={{ __html: description }} />
         <img src={imageUrl} alt="us" />
       </article>
     </>
